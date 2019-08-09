@@ -1,25 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import MovieContainer from "./MovieContainer"
+import { Route, Switch } from 'react-router-dom'
+import Register from './Register'
+import Header from './Header'
+
+const My404 = () => {
+  return(
+    <div>
+      You're lost buddy
+    </div>
+  )
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <Header/>
+      <Switch>
+        <Route exact path="/" component={ Register } />
+        <Route exact path="/movies" component={ MovieContainer } />
+        <Route component= {My404} />
+      </Switch>
+    </main>
   );
 }
 
