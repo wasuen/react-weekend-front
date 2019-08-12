@@ -10,6 +10,7 @@ const Header = () => {
         <Label>
           <span><Link to='/'><Button>Register</Button></Link></span><br/>
           <span><Link to='/employee'><Button>Employees</Button></Link></span>
+          <span><Link to='/login'><Button>login</Button></Link></span>
         </Label>
     </Form>
     </header>

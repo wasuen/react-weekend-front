@@ -4,7 +4,7 @@ import MainContainer from './MainContainer';
 import { Route, Switch } from 'react-router-dom';
 import Register from './Register';
 import Header from './Header';
-import { GoogleLogin } from 'react-google-login';
+import Login from './Login'
  
  
 
@@ -19,9 +19,6 @@ const My404 = () => {
 
 class App extends Component {
 
-  responseGoogle = (response) => {
-    console.log(response);
-  }
   render() {
       return (
         <main>
@@ -29,14 +26,9 @@ class App extends Component {
           <Switch>
             <Route exact path='/' component={ Register } />
             <Route exact path='/employee' component={ MainContainer } />
+            <Route exact path='/login' component={ Login } />
             <Route component={My404} />
           </Switch>
-          <GoogleLogin
-            clientId="943884177518-5f139p2o3hsjsdsn0a2qm8rb6gt3aekf.apps.googleusercontent.com"
-            buttonText="Login"
-            onSuccess={this.responseGoogle}
-            onFailure={this.responseGoogle}
-            cookiePolicy={'single_host_origin'}/>
         </main>
       );
   }
