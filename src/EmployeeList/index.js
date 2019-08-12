@@ -1,20 +1,37 @@
 import React from 'react';
-import { Button } from 'reactstrap';
+import { Button, Table } from 'reactstrap';
+import { TableStyle } from './style';
+
 
 
 const EmployeeList =(props) =>{
     console.log(props, '<-props in employee list')
     const employeeList= props.employee.map((employee)=>{
         return(
-            <li key={employee._id}>
-                <span>{employee.name}</span><br/>
-                <span>{employee.position}</span><br/>
-                <span>{employee.birthDate}</span><br/>
-                <span>{employee.department}</span><br/>
-                <span>{employee.annualSalary}</span><br/>
-                <Button onClick={props.showModal.bind(null, employee)} color='warning' active>Edit</Button> {' '}
-                <Button onClick={props.deleteEmployee.bind(null, employee._id)} color='warning' active>Delete</Button><br/>
-            </li>
+          <TableStyle>
+            <Table key={employee._id} width='100px' hover>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Position</th>
+                  <th>Birth Date</th>
+                  <th>Department</th>
+                  <th>Annual Salary</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>{employee.name}</th>
+                  <th>{employee.position}</th>
+                  <th>{employee.birthDate}</th>
+                  <th>{employee.department}</th>
+                  <th>{employee.annualSalary}</th>
+                </tr>
+              </tbody>
+                <Button onClick={props.showModal.bind(null, employee)} color='warning' active>Edit</Button>
+                <Button onClick={props.deleteEmployee.bind(null, employee._id)} color='warning' active>Delete</Button>
+            </Table>
+          </TableStyle>
         )   
     })
     return (
