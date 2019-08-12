@@ -1,19 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Label ,Button, Form } from 'semantic-ui-react';
+import { Button, ButtonGroup } from 'reactstrap';
 
 
 const Header = () => {
   return (
-    <header>
-      <Form>
-        <Label>
-          <span><Link to='/'><Button>Register</Button></Link></span><br/>
-          <span><Link to='/employee'><Button>Employees</Button></Link></span>
-          <span><Link to='/login'><Button>login</Button></Link></span>
-        </Label>
-    </Form>
-    </header>
+    <div>
+      <ButtonGroup>
+          <Link to='/'><Button color='primary'>Register</Button></Link>
+          <Link to='/login'><Button color='primary'>login</Button></Link>
+          <Link to='/employee'><Button color='primary'>Employees</Button></Link>
+      </ButtonGroup>
+    </div>
     )
 }
 
