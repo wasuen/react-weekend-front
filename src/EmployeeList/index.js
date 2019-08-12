@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'reactstrap';
 
 
 const EmployeeList =(props) =>{
@@ -11,8 +12,8 @@ const EmployeeList =(props) =>{
                 <span>{employee.birthDate}</span><br/>
                 <span>{employee.department}</span><br/>
                 <span>{employee.annualSalary}</span><br/>
-                <button onClick={props.showModal.bind(null, employee)}>Edit</button>
-                <button onClick={props.deleteEmployee.bind(null, employee._id)}>Delete</button><br/>
+                <Button onClick={props.showModal.bind(null, employee)} color='warning' active>Edit</Button> {' '}
+                <Button onClick={props.deleteEmployee.bind(null, employee._id)} color='warning' active>Delete</Button><br/>
             </li>
         )   
     })

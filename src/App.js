@@ -24,6 +24,7 @@ class App extends Component {
       return (
         <main>
           <Header />
+          <br/>
           <Switch>
             <Route exact path='/' component={ Register } />
             <Route exact path='/employee' component={ MainContainer } />

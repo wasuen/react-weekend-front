@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import CreateEmployee from '../CreateEmployee'
 import EmployeeList from '../EmployeeList';
-import EditEmployee from '../EditEmployee'
+import EditEmployee from '../EditEmployee';
+
 
 
 class MainContainer extends Component {

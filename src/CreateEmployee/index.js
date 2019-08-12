@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 class CreateEmployee extends Component{
 
@@ -16,26 +17,38 @@ class CreateEmployee extends Component{
 
     render(){
         return(
-            <form onSubmit={this.props.addEmployee.bind(null, this.state)}>
-                <label htmlFor="name">Name:
-                    <input type='text' name="name" onChange={this.updateEmployee} value={this.state.name}/>
-                </label>
-                <label htmlFor="position">Position:
-                    <input type='text' name="position" onChange={this.updateEmployee} value={this.state.position}/>
-                </label>
-                <label htmlFor="birthDate">Birthday:
-                    <input type='date' name="birthDate" onChange={this.updateEmployee} value={this.state.birthDate}/>
-                </label>
-                <label htmlFor="department">Department:
-                    <input type='text' name="department" onChange={this.updateEmployee} value={this.state.department}/>
-                </label>
-                <label htmlFor="annualSalary">Annual Salary:
-                    <input type='text' name="annualSalary" onChange={this.updateEmployee} value={this.state.annualSalary}/>
-                </label>
-                <button type='submit'>
-                    Create Employee
-                </button>
-            </form>
+            <Form onSubmit={this.props.addEmployee.bind(null, this.state)}>
+                <FormGroup>
+                    <Label htmlFor="name">Name:
+                        <Input type='text' name="name" onChange={this.updateEmployee} value={this.state.name}/>
+                    </Label>
+                </FormGroup>
+                <FormGroup>
+                    <Label htmlFor="position">Position:
+                        <Input type='text' name="position" onChange={this.updateEmployee} value={this.state.position}/>
+                    </Label>
+                </FormGroup>
+                <FormGroup>
+                    <Label htmlFor="birthDate">Birthday:
+                        <Input type='date' name="birthDate" onChange={this.updateEmployee} value={this.state.birthDate}/>
+                    </Label>
+                </FormGroup>
+                <FormGroup>
+                    <Label htmlFor="department">Department:
+                        <Input type='text' name="department" onChange={this.updateEmployee} value={this.state.department}/>
+                    </Label>
+                </FormGroup>
+                <FormGroup>
+                    <Label htmlFor="annualSalary">Annual Salary:
+                        <Input type='text' name="annualSalary" onChange={this.updateEmployee} value={this.state.annualSalary}/>
+                    </Label>
+                </FormGroup>
+                <FormGroup>
+                    <Button type='submit' color='warning' size='lg' active>
+                        Create Employee
+                    </Button>
+                </FormGroup>
+            </Form>
 
         )
     }
